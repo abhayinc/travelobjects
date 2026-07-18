@@ -316,6 +316,18 @@ section {
   height: 24px;
 }
 
+.mobile-menu-toggle .icon-close {
+  display: none;
+}
+
+.mobile-menu-toggle.active .icon-menu {
+  display: none;
+}
+
+.mobile-menu-toggle.active .icon-close {
+  display: block;
+}
+
 /* --- Mobile Navigation Overlay --- */
 .mobile-nav-overlay {
   position: fixed;
@@ -439,23 +451,32 @@ section {
 
 .image-overlay-label {
   position: absolute;
-  bottom: clamp(1rem, 4vw, 1.5rem);
-  left: clamp(1rem, 4vw, 1.5rem);
+  bottom: 20px;
+  left: 20px;
   display: flex;
   flex-direction: column;
   z-index: 10;
+  background-color: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.5rem 0.85rem;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .label-heading {
   font-family: var(--font-family-heading);
-  font-size: clamp(0.75rem, 1.8vw, 0.85rem);
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--color-text-primary);
+  color: #FFFDFB;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .label-sub {
-  font-size: clamp(0.65rem, 1.5vw, 0.75rem);
-  color: var(--color-text-secondary);
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 2px;
 }
 
 /* --- System (Philosophy) Section --- */
@@ -1250,7 +1271,7 @@ section {
   }
   
   .hero-image-wrapper {
-    order: -1;
+    margin-top: 2rem;
   }
   
   .system-grid {

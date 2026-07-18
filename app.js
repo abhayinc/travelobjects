@@ -25,18 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileToggle && mobileOverlay) {
     mobileToggle.addEventListener('click', () => {
       const isOpen = mobileOverlay.classList.toggle('open');
+      mobileToggle.classList.toggle('active', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
-      
-      // Update toggle icon between menu and close
-      const icon = mobileToggle.querySelector('i');
-      if (icon && typeof lucide !== 'undefined') {
-        if (isOpen) {
-          icon.setAttribute('data-lucide', 'x');
-        } else {
-          icon.setAttribute('data-lucide', 'menu');
-        }
-        lucide.createIcons();
-      }
     });
 
     // Close menu when clicking links
@@ -44,12 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         mobileOverlay.classList.remove('open');
+        mobileToggle.classList.remove('active');
         document.body.style.overflow = '';
-        const icon = mobileToggle.querySelector('i');
-        if (icon && typeof lucide !== 'undefined') {
-          icon.setAttribute('data-lucide', 'menu');
-          lucide.createIcons();
-        }
       });
     });
   }
