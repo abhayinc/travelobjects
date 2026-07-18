@@ -1218,9 +1218,11 @@ section {
   transform: translateY(-2px);
 }
 
-.social-row a i {
+.social-row a i,
+.social-row a svg {
   width: 15px;
   height: 15px;
+  display: block;
 }
 
 .footer-bottom {
